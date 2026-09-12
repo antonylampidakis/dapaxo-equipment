@@ -11,7 +11,7 @@ dotenv.config();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const PORT = Number(process.env.PORT || 3100);
+const PORT = process.env.PORT || 3100;
 
 const SUPABASE_URL = process.env.SUPABASE_URL;
 const SUPABASE_SERVICE_ROLE_KEY =
@@ -39,6 +39,7 @@ const app = express();
 
 const ALLOWED_ORIGINS = new Set([
   "http://localhost:5173",
+  "https://antonylampidakis.github.io",
 ]);
 
 app.use((req, res, next) => {
@@ -1277,16 +1278,6 @@ app.post(
    START SERVER
    ========================================================= */
 
-app.listen(PORT, () => {
-  console.log("");
-  console.log(
-    "ΔΑΠΑΧΟ PDF Service"
-  );
-  console.log(
-    `http://localhost:${PORT}`
-  );
-  console.log(
-    `Health: http://localhost:${PORT}/health`
-  );
-  console.log("");
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`PDF service running on port ${PORT}`);
 });
