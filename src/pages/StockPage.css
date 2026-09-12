@@ -1,0 +1,273 @@
+.stock-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stock-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.stock-page-header h1 {
+  margin: 0 0 6px;
+}
+
+.stock-page-header p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+.stock-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.stock-page-error {
+  padding: 14px 16px;
+
+  border: 1px solid var(--color-danger);
+  border-radius: var(--radius-sm);
+
+  color: var(--color-danger);
+}
+
+.stock-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stock-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  padding: 20px;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.stock-stat-card span {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.stock-stat-card strong {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.stock-stat-card small {
+  color: var(--color-text-muted);
+}
+
+.stock-list-card {
+  overflow: hidden;
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.stock-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stock-list-heading h2 {
+  margin: 0 0 4px;
+}
+
+.stock-list-heading p {
+  margin: 0;
+
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.stock-filters {
+  display: grid;
+  grid-template-columns: minmax(260px, 2fr) minmax(200px, 1fr);
+  gap: 14px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stock-search,
+.stock-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stock-search label,
+.stock-filter label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.stock-search input,
+.stock-filter select {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  background: var(--color-surface);
+  color: inherit;
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+}
+
+.stock-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.stock-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stock-table th {
+  padding: 12px 16px;
+
+  text-align: left;
+  white-space: nowrap;
+
+  font-size: 12px;
+  color: var(--color-text-muted);
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stock-table td {
+  padding: 15px 16px;
+
+  vertical-align: top;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.stock-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.stock-location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 180px;
+}
+
+.stock-location-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  font-size: 13px;
+}
+
+.stock-location-row span {
+  color: var(--color-text-muted);
+}
+
+.stock-quantity {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 34px;
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.stock-quantity-positive {
+  background: rgba(46, 125, 50, 0.12);
+}
+
+.stock-quantity-zero {
+  background: rgba(198, 40, 40, 0.12);
+}
+
+.stock-muted {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.stock-action-button {
+  padding: 7px 10px;
+
+  background: transparent;
+  color: var(--color-primary);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.stock-action-button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.stock-empty {
+  padding: 48px 20px;
+
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 1000px) {
+  .stock-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .stock-page-header {
+    flex-direction: column;
+  }
+
+  .stock-header-actions {
+    width: 100%;
+  }
+
+  .stock-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-filters {
+    grid-template-columns: 1fr;
+  }
+}

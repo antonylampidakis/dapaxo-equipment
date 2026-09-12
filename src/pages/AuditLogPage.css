@@ -1,0 +1,263 @@
+.audit-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.audit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.audit-header h1 {
+  margin: 0 0 6px;
+}
+
+.audit-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.audit-refresh-button,
+.audit-details-button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.audit-refresh-button {
+  padding: 10px 16px;
+}
+
+.audit-details-button {
+  padding: 7px 10px;
+}
+
+.audit-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.audit-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.audit-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.audit-stat-card span {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.audit-stat-card strong {
+  font-size: 26px;
+}
+
+.audit-filters {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 240px 220px;
+  gap: 12px;
+}
+
+.audit-filters input,
+.audit-filters select {
+  width: 100%;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+.audit-table-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow-x: auto;
+}
+
+.audit-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.audit-table th,
+.audit-table td {
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.audit-table th {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.audit-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.audit-date {
+  white-space: nowrap;
+}
+
+.audit-user {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.audit-user span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.audit-action-badge {
+  display: inline-flex;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: var(--surface-muted);
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.audit-error,
+.audit-empty {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  background: var(--surface);
+}
+
+.audit-error {
+  color: #b42318;
+}
+
+.audit-empty {
+  color: var(--text-muted);
+}
+
+.audit-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.audit-modal {
+  width: min(950px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  padding: 22px;
+}
+
+.audit-modal-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.audit-modal-header h2 {
+  margin: 0 0 5px;
+}
+
+.audit-modal-header p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.audit-modal-header button {
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.audit-modal-info {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.audit-modal-info > div {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.audit-modal-info span {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.audit-json-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.audit-json-grid h3 {
+  margin: 0 0 8px;
+}
+
+.audit-json-grid pre {
+  margin: 0;
+  min-height: 160px;
+  max-height: 360px;
+  overflow: auto;
+  padding: 14px;
+  border-radius: 9px;
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .audit-stats,
+  .audit-modal-info {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-filters,
+  .audit-json-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .audit-header {
+    flex-direction: column;
+  }
+}

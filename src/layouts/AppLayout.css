@@ -1,0 +1,12 @@
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-main-area {
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+}
+
+.app-content {
+  padding: 28px;
+}
