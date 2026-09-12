@@ -42,6 +42,7 @@ jobs:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
           VITE_PUBLIC_APP_URL: https://antonylampidakis.github.io/dapaxo-equipment
+          VITE_PDF_SERVICE_URL: ${{ secrets.VITE_PDF_SERVICE_URL }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
